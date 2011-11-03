@@ -12,18 +12,19 @@
     	<div class="inner_copy">
 	   	</div>
 		<div class="float">
-			<!--<div class="left">-->
+			<div class="left">
 	  		    <% flash.each do |key, value| %>
 	          		<div class="flash <%= key %>"><%= value %></div>
-	        	<% end %>
+            	<% end %>
 				<%= yield %>
-			<!--</div>-->
+			</div>
 	  	</div>
-	  	<!--<div class="right">
-	  		fdsfds
-	  	</div>-->
-	  	<div class="bot">
+	  	<div class="right">
 	  	</div>
+	  	<%= image_tag "middle.jpg", :width => "620", :height => "0", :class => "pad" %>
+  	<div class="bot">
+  		
+  	</div>
 
    </div>
 	<%= render 'layouts/footer' %>
