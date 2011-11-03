@@ -9,9 +9,34 @@
 <div class="menu">
 	<ul>
 		<li><%= image_tag "lefttop.gif", :width => 165, :height => 56 %></li>
-		<li><a href="#"><%= image_tag "but-src.gif", :width => 109, :height => 30 %></a></li>
-		<li><a href="#"><%= image_tag "but-src.gif", :width => 109, :height => 30 %></a></li>
-		<li><a href="#"><%= image_tag "but-src.gif", :width => 109, :height => 30 %></a></li>
-		<li><a href="#"><%= image_tag "but-src.gif", :width => 108, :height => 30 %></a></li>
+		<li>
+			<div class="image">
+				<%= link_to root_path do %>
+					<span>Home</span><%= image_tag 'but-src.gif', :width => 109, :height => 30 %>
+				<% end %>
+			</div>
+		</li>
+		<li>
+			<div class="image">
+				<%= link_to root_path do %>
+					<span>Menu</span><%= image_tag 'but-src.gif', :width => 109, :height => 30 %>
+				<% end %>
+			</div>
+		</li>
+		<li>
+			<div class="image">
+				<%= link_to root_path do %>
+					<span>Prenota</span><%= image_tag 'but-src.gif', :width => 109, :height => 30 %>
+				<% end %>
+			</div>
+		</li>
+		<li>
+			<div class="image">
+				<%= link_to root_path do %>
+					<span>Offerte</span><%= image_tag 'but-src.gif', :width => 109, :height => 30 %>
+				<% end %>
+			</div>
+		</li>		
+		
 	</ul>
 </div>

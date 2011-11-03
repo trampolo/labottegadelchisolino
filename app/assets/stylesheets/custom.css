@@ -191,3 +191,27 @@ padding:7px;
 #footer a:visited{text-decoration:none}
 #footer a:hover{text-decoration:underline}
 #content .inner_copy {border:0;color:#f00;float:left;width:50%!important;margin:-202px 0 0 0;overflow:hidden;line-height:0;padding:0;font-size:12px}
+
+
+.image {
+	position: relative;
+	width: 100%;
+}
+
+.image span {
+	position: absolute;
+	top: 0px;
+	left: 0;
+	width: 100%;
+	padding: 5px 0px 1px 0px;
+	text-align: center;
+	font-family: Tahoma;
+	font-size: 16px;
+	font-weight: bold;
+	color: white;
+	text-decoration:blink;
+}
+
+.image a {text-decoration:none}
+
+
