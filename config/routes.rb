@@ -4,6 +4,7 @@ Labottegadelchisolino::Application.routes.draw do
   match '/about',   :to => 'pages#about'
   match '/contact', :to => 'pages#contact'
   match '/where',   :to => 'pages#where'
+  match '/news',   :to => 'pages#news'
   
   root :to => 'pages#home'
   
