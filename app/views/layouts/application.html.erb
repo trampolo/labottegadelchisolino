@@ -1,14 +1,45 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Labottegadelchisolino</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title><%= @title %></title>
+    <%= csrf_meta_tag %>
+	<%= render 'layouts/stylesheets' %>
+	<%= javascript_include_tag "application" %>	
+  </head>
+  <body>
+	<%= render 'layouts/header' %>
+    <div id="content">
+    	<div class="inner_copy">
+	   	</div>
+		<div class="float">
+			<!--<div class="left">-->
+	  		    <% flash.each do |key, value| %>
+	          		<div class="flash <%= key %>"><%= value %></div>
+	        	<% end %>
+				<%= yield %>
+			<!--</div>-->
+	  	</div>
+	  	<!--<div class="right">
+	  		fdsfds
+	  	</div>-->
+	  	<div class="bot">
+	  	</div>
 
-<%= yield %>
+   </div>
+	<%= render 'layouts/footer' %>
+	<%= debug(params) if Rails.env.development? %>
 
-</body>
+<map name="Map" id="Map">
+	<area shape="rect" coords="110,2,128,63" href="#" />
+</map>
+<map name="Map2" id="Map2">
+	<area shape="rect" coords="109,1,126,65" href="#" />
+</map>
+<map name="Map3" id="Map3">
+	<area shape="rect" coords="111,2,127,67" href="#" />
+</map>
+<map name="Map4" id="Map4">
+	<area shape="rect" coords="112,0,128,64" href="#" />
+</map>
+  </body>
 </html>
