@@ -1,2 +1,4 @@
-<h1>Pages#about</h1>
-<p>Find me in app/views/pages/about.html.erb</p>
+<div class="left">
+	<%= @page.content.html_safe %>
+	<%= link_to 'Edit', edit_page_path(@page) %>
+</div>

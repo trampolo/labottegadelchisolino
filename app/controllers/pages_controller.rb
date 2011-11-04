@@ -27,17 +27,21 @@ class PagesController < ApplicationController
 
   def about
     @title = "Chi siamo"
+    @page = Page.find(3)
   end
 
   def contact
     @title = "Contatti"
+    @page = Page.find(5)
   end
 
   def where
     @title = "Dove siamo"
+    @page = Page.find(4)
   end
 
   def news
     @title = "News"
+    @page = Page.find(6)
   end
 end
