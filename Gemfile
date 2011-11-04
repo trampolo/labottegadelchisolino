@@ -33,6 +33,8 @@ end
 
 group :production do
   gem 'pg'
+  gem 'execjs'
+  gem 'therubytracer'
 end
 
 group :test do
