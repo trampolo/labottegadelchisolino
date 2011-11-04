@@ -34,7 +34,7 @@ end
 group :production do
   gem 'pg'
   gem 'execjs'
-  gem 'therubytracer'
+  gem 'therubyracer'
 end
 
 group :test do
