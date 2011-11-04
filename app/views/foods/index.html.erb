@@ -1,29 +1,23 @@
-<h1>Listing foods</h1>
+<h1>Menu</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Content</th>
-    <th>Price</th>
-    <th>Food type</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+</br>
+<div class="float">
+	<div class="left">
+		<% @foodTypes.each do |type| %>
+			<b><%= link_to type.name, foods_path(:type => type.id) %></b> 
+		<% end %><br/><br/>
+	</div>
+</div>
+<div>
 <% @foods.each do |food| %>
-  <tr>
-    <td><%= food.name %></td>
-    <td><%= food.content %></td>
-    <td><%= food.price %></td>
-    <td><%= food.food_type %></td>
-    <td><%= link_to 'Show', food %></td>
-    <td><%= link_to 'Edit', edit_food_path(food) %></td>
-    <td><%= link_to 'Destroy', food, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+    <b><%= food.name %></b> <span class="price"><%= food.price %> €</span></br>
+    <%= food.content %></br>
+
+    <%= link_to "Show", food %>
+    <%= link_to "Edit", edit_food_path(food) %>
+    <%= link_to "Destroy", food, confirm: 'Are you sure?', method: :delete %></br></br>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Food', new_food_path %>
+<br/>
+<br/>
+<%= link_to 'New', new_food_path %>
+</div>

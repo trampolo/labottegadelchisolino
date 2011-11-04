@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111103161906) do
+ActiveRecord::Schema.define(:version => 20111104105322) do
 
   create_table "food_types", :force => true do |t|
     t.string   "name"
@@ -26,8 +26,15 @@ ActiveRecord::Schema.define(:version => 20111103161906) do
     t.integer  "food_type_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "important"
   end
 
   add_index "foods", ["food_type_id"], :name => "index_foods_on_food_type_id"
+
+  create_table "pages", :force => true do |t|
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

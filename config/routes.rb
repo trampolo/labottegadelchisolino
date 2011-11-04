@@ -1,14 +1,20 @@
 Labottegadelchisolino::Application.routes.draw do
   
+  scope "/admin" do
+    resources :pages, :only => [:edit, :update]
+  end
+
   resources :foods
+
+  root :to => 'pages#home'
 
   match '/',        :to => 'pages#home'
   match '/about',   :to => 'pages#about'
   match '/contact', :to => 'pages#contact'
   match '/where',   :to => 'pages#where'
-  match '/news',   :to => 'pages#news'
+  match '/news',    :to => 'pages#news'
   
-  root :to => 'pages#home'
+ # match '/:anything', :to => 'application#notfound', :constraints => { :anything => /.*/ }
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

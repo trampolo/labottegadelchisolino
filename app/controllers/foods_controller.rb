@@ -3,6 +3,15 @@ class FoodsController < ApplicationController
   # GET /foods.json
   def index
     @foods = Food.all
+    @foodTypes = FoodType.all
+      
+    type = params[:type] 
+    if type.nil?
+      @foods = Food.all
+    else
+      @foods = Food.find(:all, :conditions => ["food_type_id = ?", type]);
+    end
+    
 
     respond_to do |format|
       format.html # index.html.erb
@@ -44,7 +53,7 @@ class FoodsController < ApplicationController
 
     respond_to do |format|
       if @food.save
-        format.html { redirect_to @food, notice: 'Food was successfully created.' }
+        format.html { redirect_to @food, notice: "Piatto e' stato creato correttamente." }
         format.json { render json: @food, status: :created, location: @food }
       else
         format.html { render action: "new" }
@@ -60,7 +69,7 @@ class FoodsController < ApplicationController
 
     respond_to do |format|
       if @food.update_attributes(params[:food])
-        format.html { redirect_to @food, notice: 'Food was successfully updated.' }
+        format.html { redirect_to @food, notice: "Piatto e' stato aggiornato correttamente." }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
