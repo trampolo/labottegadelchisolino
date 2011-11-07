@@ -1,4 +1,6 @@
 class FoodsController < ApplicationController
+  before_filter :require_user, :only => [:new, :edit, :destroy, :create, :update]
+  
   # GET /foods
   # GET /foods.json
   def index
@@ -53,7 +55,7 @@ class FoodsController < ApplicationController
 
     respond_to do |format|
       if @food.save
-        format.html { redirect_to @food, notice: "Piatto e' stato creato correttamente." }
+        format.html { redirect_to @food, notice: "Piatto creato correttamente." }
         format.json { render json: @food, status: :created, location: @food }
       else
         format.html { render action: "new" }
@@ -69,7 +71,7 @@ class FoodsController < ApplicationController
 
     respond_to do |format|
       if @food.update_attributes(params[:food])
-        format.html { redirect_to @food, notice: "Piatto e' stato aggiornato correttamente." }
+        format.html { redirect_to @food, notice: "Piatto aggiornato correttamente." }
         format.json { head :ok }
       else
         format.html { render action: "edit" }

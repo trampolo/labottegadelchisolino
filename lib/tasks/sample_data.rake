@@ -5,6 +5,7 @@ namespace :db do
     make_food_type
     make_pages
     make_food_example
+    make_users
   end
   
  
@@ -53,4 +54,11 @@ def make_pages
   Page.create!(:content => "<strong>da modificare</strong> testo dove siamo")
   Page.create!(:content => "<strong>da modificare</strong> testo contatti")
   Page.create!(:content => "<strong>da modificare</strong> testo news")
+end
+
+def make_users
+  desc "Creating users..."
+  User.create!(:username => "admin", :email => "rrotta@gmail.com", 
+               :password => "gengiskan02", :password_confirmation => "gengiskan02")
+               
 end

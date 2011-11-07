@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  before_filter :require_user, :only => :edit
 
   def edit
     @page = Page.find(params[:id])

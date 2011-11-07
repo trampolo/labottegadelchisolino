@@ -2,9 +2,11 @@ Labottegadelchisolino::Application.routes.draw do
   
   scope "/admin" do
     resources :pages, :only => [:edit, :update]
+    resources :users, :only => [:new, :create, :edit, :update]
   end
 
   resources :foods
+  resources :user_sessions, :only => [:new, :create, :destroy]
 
   root :to => 'pages#home'
 
@@ -13,6 +15,8 @@ Labottegadelchisolino::Application.routes.draw do
   match '/contact', :to => 'pages#contact'
   match '/where',   :to => 'pages#where'
   match '/news',    :to => 'pages#news'
+  match '/login',   :to => 'user_sessions#new'
+  match '/logout',  :to => 'user_sessions#destroy'
   
  # match '/:anything', :to => 'application#notfound', :constraints => { :anything => /.*/ }
   
