@@ -13,11 +13,16 @@
     <b><%= food.name %></b> <span class="price"><%= food.price %> €</span></br>
     <%= food.content %></br>
 
+	<% if current_user %>
     <%= link_to "Show", food %>
     <%= link_to "Edit", edit_food_path(food) %>
-    <%= link_to "Destroy", food, confirm: 'Are you sure?', method: :delete %></br></br>
+    <%= link_to "Destroy", food, confirm: 'Are you sure?', method: :delete %>
+    <% end %></br></br>
+    
 <% end %>
 <br/>
 <br/>
+<% if current_user %>
 <%= link_to 'New', new_food_path %>
+<% end %>
 </div>
