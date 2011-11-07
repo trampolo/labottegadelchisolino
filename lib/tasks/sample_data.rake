@@ -12,12 +12,12 @@ end
 
 def make_food_type
   desc "Creating FoodTypes..."
-  FoodType.create!(:name => "Antipasto")
-  FoodType.create!(:name => "Primo")
-  FoodType.create!(:name => "Secondo")
-  FoodType.create!(:name => "Pizza")
-  FoodType.create!(:name => "Chisolino")
-  FoodType.create!(:name => "Dolce")
+  FoodType.create!(:name => "Antipasti")
+  FoodType.create!(:name => "Primi")
+  FoodType.create!(:name => "Secondi")
+  FoodType.create!(:name => "Pizze")
+  FoodType.create!(:name => "Chisolini")
+  FoodType.create!(:name => "Dolci")
 end
 
 def make_food_example
