@@ -4,17 +4,21 @@ class FoodsController < ApplicationController
   # GET /foods
   # GET /foods.json
   def index
-    @foods = Food.all
     @foodTypes = FoodType.all
       
-    type = params[:type] 
+    type = params[:type]
+     
     if type.nil?
-      @foods = Food.all
+      @type_id = 0; 
+      @foods = Food.paginate(:page => params[:page], :per_page => 20,
+                             :conditions => ["important = ?", 't'])
+
     else
-      @foods = Food.find(:all, :conditions => ["food_type_id = ?", type]);
+      @type_id = type; 
+      @foods = Food.paginate(:page => params[:page], :per_page => 20,
+                             :conditions => ["food_type_id = ?", type])
     end
     
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @foods }

@@ -4,25 +4,26 @@
 <div class="float">
 	<div class="left">
 		<% @foodTypes.each do |type| %>
-			<b><%= link_to type.name, foods_path(:type => type.id) %></b> 
+			<%= link_to type.name, foods_path(:type => type.id), :class => food_type_selected_class(@type_id, type.id) %> 
 		<% end %><br/><br/>
-	</div>
-</div>
-<div>
-<% @foods.each do |food| %>
-    <b><%= food.name %></b> <span class="price"><%= food.price %> €</span></br>
-    <%= food.content %></br>
 
+		<% @foods.each do |food| %>
+		    <b><%= food.name %></b> <span class="price"><%= food.price %> €</span></br>
+		    <%= food.content %></br>
+		
+			<% if current_user %>
+		    <%= link_to "Show", food %>
+		    <%= link_to "Edit", edit_food_path(food) %>
+		    <%= link_to "Destroy", food, confirm: 'Are you sure?', method: :delete %>
+		    </br>
+		    <% end %></br>
+		    
+		<% end %>
+<%= will_paginate @foods %>
+<br/>
+<br/>
 	<% if current_user %>
-    <%= link_to "Show", food %>
-    <%= link_to "Edit", edit_food_path(food) %>
-    <%= link_to "Destroy", food, confirm: 'Are you sure?', method: :delete %>
-    <% end %></br></br>
-    
-<% end %>
-<br/>
-<br/>
-<% if current_user %>
-<%= link_to 'New', new_food_path %>
-<% end %>
+	<%= link_to 'New', new_food_path %>
+	<% end %>
+	</div>
 </div>

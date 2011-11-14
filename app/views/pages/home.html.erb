@@ -4,10 +4,15 @@
 	<% if current_user %>
 	<%= link_to 'Edit', edit_page_path(@page1) %>
 	<% end %>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
 </div>
 <%= separator_tag %>
 <div class="left">
-	<%= image_tag "pic2.jpg", :width => "76",  :class => "float" %>
+	<%= image_tag "pic2.jpg", :width => "76",  :class => "float" %>	
 	<h1>Menu del giorno</h1>
 	<%= @page2.content.html_safe %>
 	<% if current_user %>
