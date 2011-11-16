@@ -27,4 +27,6 @@ Labottegadelchisolino::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  
+  Paperclip.options[:command_path] = "d:\ImageMagick-6.7.3-Q16"
 end

@@ -24,6 +24,7 @@ class PagesController < ApplicationController
     @page1 = Page.find(1)
     @page2 = Page.find(2)
     @important_foods = Food.find_by_sql("SELECT * FROM FOODS WHERE important = 't'")
+    @important_foods_with_photo = Food.find_by_sql("SELECT * FROM FOODS WHERE photo_file_name IS NOT NULL AND (description <> '' AND description IS NOT NULL)")
   end
 
   def about

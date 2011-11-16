@@ -1,6 +1,18 @@
-<b><%= @food.name %></b> 
-<span class="price"><%= @food.price %> €</span></br>
-<%= @food.content %></br>
+<div class="float">
+	<div class="left">
+		<b><%= @food.name %></b> 
+		<span class="price"><%= @food.price %> €</span></br>
+		<%= @food.content %></br>
+		</br>
+	<%= link_to 'Edit', edit_food_path(@food) %> |
+	<%= link_to 'Back', foods_path %>
+	</div>
+</div>
+<div class="right">
+	<div class="item">
+		<%= image_tag @food.photo.url(:thumb) %>
+		<strong><%= @food.name %></strong>
+		<%= @food.description %>
+	</div>
+</div>
 
-<%= link_to 'Edit', edit_food_path(@food) %> |
-<%= link_to 'Back', foods_path %>

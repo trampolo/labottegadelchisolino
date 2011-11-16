@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111107090545) do
+ActiveRecord::Schema.define(:version => 20111116160111) do
 
   create_table "food_types", :force => true do |t|
     t.string   "name"
@@ -27,6 +27,13 @@ ActiveRecord::Schema.define(:version => 20111107090545) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "important"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.binary   "photo_file"
+    t.binary   "photo_thumb_file"
+    t.text     "description"
   end
 
   add_index "foods", ["food_type_id"], :name => "index_foods_on_food_type_id"
@@ -35,6 +42,14 @@ ActiveRecord::Schema.define(:version => 20111107090545) do
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "photos", :force => true do |t|
+    t.string   "style"
+    t.integer  "food_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.binary   "file_contents"
   end
 
   create_table "users", :force => true do |t|

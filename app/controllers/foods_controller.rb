@@ -95,4 +95,10 @@ class FoodsController < ApplicationController
       format.json { head :ok }
     end
   end
+  
+  def photos
+    food = Food.find(params[:id])
+    style = params[:style] ? params[:style] : 'original'
+    send_data food.photo.file_contents(style), :type => food.photo_content_type    
+  end
 end

@@ -9,19 +9,12 @@
   <body>
 	<%= render 'layouts/header' %>
     <div id="content">
-    	<div class="inner_copy">
-	   	</div>
-		<div class="float">
 			<div class="container">
 	  		    <% flash.each do |key, value| %>
 	          		<div class="flash <%= key %>"><%= value %></div>
 	        	<% end %>
-				<%= yield %>
 			</div>
-	  	</div>
-	  	<div class="right">
-	  		
-	  	</div>
+				<%= yield %>
 	  	<%= image_tag "middle.jpg", :width => "620", :height => "0", :class => "pad" %>
   	<div class="bot">
   		

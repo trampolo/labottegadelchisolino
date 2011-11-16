@@ -1,3 +1,4 @@
+<div class="float">
 <div class="left">
 	<%= image_tag "pic1.jpg", :width => "76",  :class => "float" %>
 	<%= @page1.content.html_safe %>
@@ -5,10 +6,7 @@
 	<%= link_to 'Edit', edit_page_path(@page1) %>
 	<% end %>
 	</br>
-	</br>
-	</br>
-	</br>
-	</br>
+
 </div>
 <%= separator_tag %>
 <div class="left">
@@ -23,4 +21,19 @@
 		<li><%= link_to food.name, food_path(food.id) %></li>
 	<% end %>
 	</ul>
+</div>
+
+</div>
+<div class="right">
+	<% @important_foods_with_photo.each do |food| %>
+		<div class="item">
+			<%= image_tag food.photo.url(:thumb) %>
+			<strong><%= food.name %></strong>
+			<%= food.description %>
+			<span>Solo <strong><%= food.price %>€</strong></span>
+		</div>
+		<div class="line2">
+			<%= image_tag "spacer.gif", :width => "229" %>
+		</div>
+	<% end %>
 </div>

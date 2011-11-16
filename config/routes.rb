@@ -17,6 +17,7 @@ Labottegadelchisolino::Application.routes.draw do
   match '/news',    :to => 'pages#news'
   match '/login',   :to => 'user_sessions#new'
   match '/logout',  :to => 'user_sessions#destroy'
+  match ':controller/:action/:id'
   
  # match '/:anything', :to => 'application#notfound', :constraints => { :anything => /.*/ }
   
