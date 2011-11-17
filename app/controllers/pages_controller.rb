@@ -48,4 +48,9 @@ class PagesController < ApplicationController
     @title = "News"
     @page = Page.find(6)
   end
+  
+  def press
+    @title = "Dicono Di Noi"
+    @page = Page.find(7)
+  end
 end

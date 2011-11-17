@@ -17,6 +17,7 @@ Labottegadelchisolino::Application.routes.draw do
   match '/contact', :to => 'pages#contact'
   match '/where',   :to => 'pages#where'
   match '/news',    :to => 'pages#news'
+  match '/press',   :to => 'pages#press'
   match '/login',   :to => 'user_sessions#new'
   match '/logout',  :to => 'user_sessions#destroy'
   match ':controller/:action/:id'
