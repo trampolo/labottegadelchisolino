@@ -36,6 +36,7 @@ group :production do
   gem 'pg'
   gem 'execjs'
   gem 'therubyracer'
+  gem 'rmagick'
 end
 
 group :test do
