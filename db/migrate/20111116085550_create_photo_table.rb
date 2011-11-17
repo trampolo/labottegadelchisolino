@@ -3,9 +3,9 @@ class CreatePhotoTable < ActiveRecord::Migration
     create_table :photos do |t|
       t.string :style
       t.integer :food_id
+      t.binary :file_contents
       t.timestamps
     end
-    execute 'ALTER TABLE photos ADD COLUMN file_contents LONGBLOB'
   end
 
   def down
