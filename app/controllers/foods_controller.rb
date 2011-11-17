@@ -10,12 +10,12 @@ class FoodsController < ApplicationController
      
     if type.nil?
       @type_id = 0; 
-      @foods = Food.paginate(:page => params[:page], :per_page => 20,
+      @foods = Food.paginate(:page => params[:page], :per_page => 10,
                              :conditions => ["important = ?", 't'])
 
     else
       @type_id = type; 
-      @foods = Food.paginate(:page => params[:page], :per_page => 20,
+      @foods = Food.paginate(:page => params[:page], :per_page => 10,
                              :conditions => ["food_type_id = ?", type])
     end
     

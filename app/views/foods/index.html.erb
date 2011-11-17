@@ -8,8 +8,11 @@
 		<% end %><br/><br/>
 
 		<% @foods.each do |food| %>
-		    <b><%= food.name %></b> <span class="price"><%= food.price %> €</span></br>
-		    <%= food.content %></br>
+			<table>
+				<tr><td><b><%= food.name %></b> <span class="price"><%= food.price %>€</span></td></tr>
+		    	<tr><td><%= food.content %></td></tr>
+		    	<tr><td><i><%= food.description %></i></td></tr>
+		    </table>
 		
 			<% if current_user %>
 		    <%= link_to "Show", food %>
