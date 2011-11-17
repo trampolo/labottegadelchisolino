@@ -4,7 +4,8 @@ class Food < ActiveRecord::Base
   has_attached_file :photo, 
                     :storage => :database, 
                     :database_table => 'photos',
-                    :styles => { :thumb => ["120x", :png] }
+                    :styles => { :thumb => ["120x", :png],
+                                 :original => ["10x", :png] }
   
   default_scope select_without_file_columns_for(:photo)
   
