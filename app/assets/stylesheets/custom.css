@@ -18,7 +18,8 @@ body {
 	width:620px;
 	margin:auto;
 	position:relative;
-	text-align:left
+	text-align:left;
+	font-family:tahoma;
 }
 
 h1 {
@@ -255,4 +256,72 @@ input[type=submit] {
 
 .selectedfoodtype {
 	font-weight: bolder;
+}
+
+/* Photo Gallery */
+#poptrox {
+	width: 570px;
+	margin: 0px auto;
+	/*background: #000000;*/
+}
+
+#gallery {
+	overflow: hidden;
+	margin: 0px 0px 0px 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+#gallery li {
+	float: left;
+	margin: 0px;
+	padding: 5px 10px;
+}
+
+/*****************************************************
+  Poptrox
+*****************************************************/
+
+.poptrox_popup {
+	position: relative;
+	padding: 1em 1em 3em 1em;
+	background: #ffffff;
+	color: #333333;
+}
+
+.poptrox_popup .loader {
+	display: block;
+	margin: 55px 0 0 0;
+	text-indent: -9999em;
+	background: url('ajax-loader.gif') top center no-repeat;
+}
+
+.poptrox_popup .caption {
+	position: absolute;
+	bottom: 1em;
+	left: 1em;
+}
+
+.poptrox_popup .closer {
+	position: absolute;
+	bottom: 1em;
+	right: 1em;
+}
+
+
+#box1 {
+	margin: 10px 10px 10px 10px;
+	padding: 0px;
+	background: #000000;
+	color: #000000;
+}
+
+#gallery img {
+	opacity: 0.4;
+	filter: alpha(opacity=40);
+}
+
+#gallery a:hover img {
+	opacity: 1;
+	filter: alpha(opacity=100);
 }

@@ -1,5 +1,7 @@
 Labottegadelchisolino::Application.routes.draw do
   
+  resources :pictures
+
   scope "/admin" do
     resources :pages, :only => [:edit, :update]
     resources :users, :only => [:new, :create, :edit, :update]
