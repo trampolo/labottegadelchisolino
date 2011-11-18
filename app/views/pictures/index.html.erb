@@ -25,5 +25,6 @@
 <br />
 
 
-
-<%= link_to 'New Picture', new_picture_path %>
+<% if current_user %>
+	<%= link_to 'New Picture', new_picture_path %>
+<% end %>
