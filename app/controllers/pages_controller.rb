@@ -49,8 +49,8 @@ class PagesController < ApplicationController
     @page = Page.find(6)
   end
   
-  def press
-    @title = "Dicono Di Noi"
+  def offerte
+    @title = "Offerte"
     @page = Page.find(7)
   end
 end

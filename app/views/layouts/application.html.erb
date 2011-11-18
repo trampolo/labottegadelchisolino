@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= @title %></title>
+    <title>La Bottega del Chisolino - <%= @title %></title>
     <%= csrf_meta_tag %>
 	<%= render 'layouts/stylesheets' %>
 	<%= javascript_include_tag "application" %>	
@@ -9,20 +9,20 @@
   <body>
 	<%= render 'layouts/header' %>
     <div id="content">
-			<div class="container">
-	  		    <% flash.each do |key, value| %>
-	          		<div class="flash <%= key %>"><%= value %></div>
-	        	<% end %>
-			</div>
-				<%= yield %>
+		<div class="container">
+  		    <% flash.each do |key, value| %>
+          		<div class="flash <%= key %>"><%= value %></div>
+        	<% end %>
+		</div>
+		<%= yield %>
 	  	<%= image_tag "middle.jpg", :width => "620", :height => "0", :class => "pad" %>
   	<div class="bot">
   		
   	</div>
 
-   </div>
-	<%= render 'layouts/footer' %>
-	<%= debug(params) if Rails.env.development? %>
+</div>
+<%= render 'layouts/footer' %>
+<%= debug(params) if Rails.env.development? %>
 
 <map name="Map" id="Map">
 	<area shape="rect" coords="110,2,128,63" href="#" />
