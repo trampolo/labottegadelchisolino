@@ -1,11 +1,10 @@
-<h1>Menu</h1>
-
+<h1>Menu</h1></br>
+<% @foodTypes.each do |type| %>
+	<%= link_to type.name, foods_path(:type => type.id), :class => food_type_selected_class(@type_id, type.id) %>&nbsp;&nbsp; 
+<% end %><br/>
 </br>
 <div class="float">
 	<div class="left">
-		<% @foodTypes.each do |type| %>
-			<%= link_to type.name, foods_path(:type => type.id), :class => food_type_selected_class(@type_id, type.id) %> 
-		<% end %><br/><br/>
 
 		<% @foods.each do |food| %>
 			<table>

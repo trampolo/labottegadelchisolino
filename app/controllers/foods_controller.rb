@@ -7,17 +7,14 @@ class FoodsController < ApplicationController
     @foodTypes = FoodType.all
       
     type = params[:type]
-     
-    if type.nil?
-      @type_id = 0; 
-      @foods = Food.paginate(:page => params[:page], :per_page => 10,
-                             :conditions => ["important = ?", 't'])
 
-    else
-      @type_id = type; 
+    if type.nil?
+      type = "1";      
+    end
+    
+    @type_id = type; 
       @foods = Food.paginate(:page => params[:page], :per_page => 10,
                              :conditions => ["food_type_id = ?", type])
-    end
     
     respond_to do |format|
       format.html # index.html.erb
