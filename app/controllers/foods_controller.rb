@@ -13,8 +13,8 @@ class FoodsController < ApplicationController
     end
     
     @type_id = type; 
-      @foods = Food.paginate(:page => params[:page], :per_page => 10,
-                             :conditions => ["food_type_id = ?", type])
+    @foods = Food.paginate(:page => params[:page], :per_page => 5,
+                           :conditions => ["food_type_id = ?", type])
     
     respond_to do |format|
       format.html # index.html.erb

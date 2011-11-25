@@ -7,7 +7,7 @@ gem 'rails', '3.1.0'
 
 gem 'authlogic'
 gem 'will_paginate'
-gem 'paperclip', :git => 'git://github.com/patshaughnessy/paperclip'
+gem 'paperclip', :git => 'git://github.com/trampolo/paperclip'
 
 # Gems used only for assets and not required
 # in production environments by default.

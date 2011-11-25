@@ -47,9 +47,9 @@ ActiveRecord::Schema.define(:version => 20111117091738) do
   create_table "photos", :force => true do |t|
     t.string   "style"
     t.integer  "food_id"
+    t.binary   "file_contents"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.binary   "file_contents"
   end
 
   create_table "pictures", :force => true do |t|
