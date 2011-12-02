@@ -30,7 +30,9 @@
 			<%= image_tag food.photo.url(:thumb) %>
 			<strong><%= food.name %></strong>
 			<%= food.description %>
-			<span>Solo <strong><%= food.price %>€</strong></span>
+			<% if !food.price.nil? %>
+				<span>Solo <strong><%= food.price %>€</strong></span>
+			<% end %>
 		</div>
 		<div class="line2">
 			<%= image_tag "spacer.gif" %>

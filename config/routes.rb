@@ -18,6 +18,7 @@ Labottegadelchisolino::Application.routes.draw do
   match '/where',   :to => 'pages#where'
   match '/news',    :to => 'pages#news'
   match '/offerte', :to => 'pages#offerte'
+  match '/eventi',  :to => 'pages#eventi'
   match '/login',   :to => 'user_sessions#new'
   match '/logout',  :to => 'user_sessions#destroy'
   match ':controller/:action/:id'

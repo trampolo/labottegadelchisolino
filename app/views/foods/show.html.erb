@@ -1,7 +1,9 @@
 <div class="float">
 	<div class="left">
 		<b><%= @food.name %></b> 
-		<span class="price"><%= @food.price %> €</span></br>
+		<% if !@food.price.nil? %>
+			<span class="price"><%= @food.price %> €</span></br>
+		<% end %>
 		<%= @food.content %></br>
 		</br>
 	<%= link_to 'Edit', edit_food_path(@food) %> |
@@ -10,8 +12,9 @@
 </div>
 <div class="right">
 	<div class="item">
-		<%= image_tag @food.photo.url(:thumb) %>
-		<strong><%= @food.name %></strong>
+		<% if @food.photo_file_size? %>
+			<%= image_tag @food.photo.url(:thumb) %>
+		<% end %>
 		<%= @food.description %>
 	</div>
 </div>

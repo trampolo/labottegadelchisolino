@@ -53,4 +53,9 @@ class PagesController < ApplicationController
     @title = "Offerte"
     @page = Page.find(7)
   end
+  
+  def eventi
+    @title = "Eventi"
+    @page = Page.find(8)
+  end
 end

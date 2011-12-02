@@ -7,18 +7,34 @@
 	<div class="left">
 
 		<% @foods.each do |food| %>
+		<div class="line2">
+			<%= image_tag "spacer.gif" %>
+		</div>
 			<table>
-				<tr><td><b><%= food.name %></b> <span class="price"><%= food.price %>€</span></td></tr>
-		    	<tr><td><%= food.content %></td></tr>
-		    	<tr><td><i><%= food.description %></i></td></tr>
-		    </table>
-		
-			<% if current_user %>
-		    <%= link_to "Show", food %>
-		    <%= link_to "Edit", edit_food_path(food) %>
-		    <%= link_to "Destroy", food, confirm: 'Are you sure?', method: :delete %>
-		    </br>
-		    <% end %></br>
+				<tr>
+					<td>
+						<table width="250px">
+							<tr><td><b><%= food.name %> </b><%= link_to arrow_img, food_path(food.id) %>
+								<% if !food.price.nil? %>
+									<span class="price"><%= food.price %>€</span>
+								<% end %>
+							</td></tr>
+					    	<tr><td><%= food.content %></td></tr>
+					    	<tr><td><i><%= food.description %></i></td></tr>	
+					    </table>
+				    </td>
+				</tr>
+				<tr>
+			    	<td>
+			    		<% if current_user %>
+						    <%= link_to "Show", food %>
+						    <%= link_to "Edit", edit_food_path(food) %>
+						    <%= link_to "Destroy", food, confirm: 'Are you sure?', method: :delete %>
+					    <% end %>
+			    	</td>
+				</tr>
+			</table>
+			
 		    
 		<% end %>
 <%= will_paginate @foods %>
