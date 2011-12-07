@@ -1,44 +1,15 @@
-<div id="header">
-	<%= image_tag "logo2.JPG"%>
-</div>
-<div class="menu">
-	<ul>
-		<li><%= image_tag "lefttop2.gif", :width => 56, :height => 56 %></li>
-		<li>
-			<div class="image">
-				<%= link_to root_path do %>
-					<span>Home</span><%= image_tag 'button.gif', :width => 109, :height => 30 %>
-				<% end %>
-			</div>
-		</li>
-		<li>
-			<div class="image">
-				<%= link_to foods_path do %>
-					<span>Menu</span><%= image_tag 'button.gif', :width => 109, :height => 30 %>
-				<% end %>
-			</div>
-		</li>
-		<li>
-			<div class="image">
-				<%= link_to offerte_path do %>
-					<span>Offerte</span><%= image_tag 'button.gif', :width => 109, :height => 30 %>
-				<% end %>
-			</div>
-		</li>
-		<li>
-			<div class="image">
-				<%= link_to eventi_path do %>
-					<span>Eventi</span><%= image_tag 'button.gif', :width => 109, :height => 30 %>
-				<% end %>
-			</div>
-		</li>
-		<li>
-			<div class="image">
-				<%= link_to pictures_path do %>
-					<span>Foto</span><%= image_tag 'button.gif', :width => 109, :height => 30 %>
-				<% end %>
-			</div>
-		</li>		
-		
-	</ul>
-</div>
+<header>
+  <%= link_to logo, root_path %>
+  <nav class="round">
+    <ul>
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "Menu", foods_path %></li>
+      <li><%= link_to "Offerte", offerte_path %></li>
+      <li><%= link_to "Eventi", eventi_path %></li>
+      <li><%= link_to "Foto", pictures_path %></li>
+    </ul>
+  </nav>
+</header>
+
+
