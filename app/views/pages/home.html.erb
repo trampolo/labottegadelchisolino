@@ -1,6 +1,10 @@
-<div class="float">
-<div class="left">
-	<%= image_tag "pic1.jpg", :width => "76",  :class => "float" %>
+
+<div id="left">
+	
+</div>
+
+
+<div id="right">
 	<%= @page1.content.html_safe %>
 	<% if current_user %>
 	<%= link_to 'Edit', edit_page_path(@page1) %>
@@ -8,34 +12,6 @@
 	</br>
 
 </div>
-<%= separator_tag %>
-<div class="left">
-	<%= image_tag "pic2.jpg", :width => "76",  :class => "float" %>	
-	<h1>Menu del giorno</h1>
-	<%= @page2.content.html_safe %>
-	<% if current_user %>
-	<%= link_to 'Edit', edit_page_path(@page2) %>
-	<% end %></br></br>
-	<ul>
-	<% @important_foods.each do |food| %>
-		<li><%= link_to food.name, food_path(food.id) %></li>
-	<% end %>
-	</ul>
-</div>
 
-</div>
-<div class="right">
-	<% @important_foods_with_photo.each do |food| %>
-		<div class="item">
-			<%= image_tag food.photo.url(:thumb) %>
-			<strong><%= food.name %></strong>
-			<%= food.description %>
-			<% if !food.price.nil? %>
-				<span>Solo <strong><%= food.price %>€</strong></span>
-			<% end %>
-		</div>
-		<div class="line2">
-			<%= image_tag "spacer.gif" %>
-		</div>
-	<% end %>
-</div>
+
+

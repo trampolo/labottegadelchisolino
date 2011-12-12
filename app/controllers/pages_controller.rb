@@ -21,6 +21,7 @@ class PagesController < ApplicationController
 
   def home
     @title = "Home"
+    @border_color = "#ffc000"
     @page1 = Page.find(1)
     @page2 = Page.find(2)
     @important_foods = Food.find_by_sql("SELECT * FROM FOODS WHERE important = 't'")
@@ -29,8 +30,9 @@ class PagesController < ApplicationController
       IS NOT NULL AND (description <> '' AND description IS NOT NULL) ORDER BY RANDOM() LIMIT 4 ")
   end
 
-  def about
-    @title = "Chi siamo"
+  def premi
+    @title = "Premi"
+    @border_color = "#cc3333"
     @page = Page.find(3)
   end
 
@@ -44,18 +46,20 @@ class PagesController < ApplicationController
     @page = Page.find(4)
   end
 
-  def news
-    @title = "News"
+  def links
+    @title = "Link Utili"
     @page = Page.find(6)
   end
   
   def offerte
     @title = "Offerte"
+    @border_color = "#3399ff"
     @page = Page.find(7)
   end
   
   def eventi
     @title = "Eventi"
+    @border_color = "#663399"
     @page = Page.find(8)
   end
 end

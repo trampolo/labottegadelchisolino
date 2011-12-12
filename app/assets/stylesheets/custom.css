@@ -4,6 +4,8 @@
 
 body {
   background: #3e1f00;
+  font-family: tahoma;
+  color: #3e1f00;
 }
 
 header {
@@ -19,17 +21,20 @@ header img {
 }
 
 section {
-  margin-top: 1em;
-  font-size: 120%;
-  padding: 20px;
+  margin-top: 28px;
+  font-size: 100%;
+  padding: 20px 50px 50px 50px;
   background: #ffff99;
-  border-color: #ffc000;
   border-style: solid;
   border-width: 5px;
+  height: 550px;
 }
 
 section h1 {
   font-size: 200%;
+  font-weight: bold;
+  color: #3e1f00;
+
 }
 
 /* Links */
@@ -55,8 +60,10 @@ nav {
 }
 
 nav {
-  background-color: #ffff99;
-  padding: 0 0.7em;
+  /*background-color: #ffff99;*/
+  /*padding: 0 0.7em;*/
+  padding: 0px 0px 0px 0px;
+  margin: 0px 24px 0px 0px;
   white-space: nowrap;
 }
 
@@ -68,21 +75,31 @@ nav ul {
 nav ul li {
   list-style-type: none;
   display: inline-block;
-  padding: 0.2em 0;
+  padding: 0 0px 10px 50px;
 }
 
 nav ul li a {
   padding: 0 5px;
   font-weight: bold;
+  color: #3e1f00;
 }
 
 nav ul li a:visited {
-  color: #09c;
+  color: #3e1f00;
 }
 
 nav ul li a:hover {
   text-decoration: underline;
 }
+
+.roundtop {
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  behavior: url(/assets/blueprint/src/border-radius.htc);
+  border-radius:         5px 5px 0px 0px;
+  
+}
+
 
 /* Sign up button */
 
@@ -201,3 +218,11 @@ ul.users {
   list-style: none;
 }
 
+#right {
+  margin-left:  20%;
+}
+
+#left {
+  float: left;
+  width: 30%;
+}

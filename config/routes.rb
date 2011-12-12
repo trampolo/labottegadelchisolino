@@ -13,10 +13,10 @@ Labottegadelchisolino::Application.routes.draw do
   root :to => 'pages#home'
 
   match '/',        :to => 'pages#home'
-  match '/about',   :to => 'pages#about'
+  match '/premi',   :to => 'pages#premi'
   match '/contact', :to => 'pages#contact'
   match '/where',   :to => 'pages#where'
-  match '/news',    :to => 'pages#news'
+  match '/links',   :to => 'pages#links'
   match '/offerte', :to => 'pages#offerte'
   match '/eventi',  :to => 'pages#eventi'
   match '/login',   :to => 'user_sessions#new'
