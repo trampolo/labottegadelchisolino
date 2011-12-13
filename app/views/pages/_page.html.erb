@@ -1,4 +1,12 @@
+<div id="left">
+	
+</div>
+
+
+<div id="right">
 	<%= @page.content.html_safe %>
 	<% if current_user %>
 	<%= link_to 'Edit', edit_page_path(@page) %>
 	<% end %>
+	</br>
+</div>

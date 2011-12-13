@@ -22,44 +22,47 @@ class PagesController < ApplicationController
   def home
     @title = "Home"
     @border_color = "#ffc000"
-    @page1 = Page.find(1)
-    @page2 = Page.find(2)
-    @important_foods = Food.find_by_sql("SELECT * FROM FOODS WHERE important = 't'")
-    rand_id = rand(Food.count)
-    @important_foods_with_photo = Food.find_by_sql("SELECT * FROM FOODS WHERE photo_file_name 
-      IS NOT NULL AND (description <> '' AND description IS NOT NULL) ORDER BY RANDOM() LIMIT 4 ")
+    @home_ht = ht
+    @page = Page.find(1)
+    @pictures = Picture.find_by_sql("SELECT * FROM PICTURES ORDER BY RANDOM() LIMIT 3 ")  
   end
 
   def premi
     @title = "Premi"
     @border_color = "#cc3333"
+    @premi_ht = ht
     @page = Page.find(3)
   end
 
   def contact
     @title = "Contatti"
+    @home_ht = ht
     @page = Page.find(5)
   end
 
   def where
     @title = "Dove siamo"
+    @home_ht = ht
     @page = Page.find(4)
   end
 
   def links
     @title = "Link Utili"
+    @home_ht = ht
     @page = Page.find(6)
   end
   
   def offerte
     @title = "Offerte"
     @border_color = "#3399ff"
+    @offerte_ht = ht
     @page = Page.find(7)
   end
   
   def eventi
     @title = "Eventi"
     @border_color = "#663399"
+    @eventi_ht = ht
     @page = Page.find(8)
   end
 end

@@ -8,4 +8,6 @@ module PagesHelper
   def arrow_img
     image_tag "arrow.gif", :width => "8", :height => "7"
   end
+  
+
 end

@@ -21,13 +21,15 @@ header img {
 }
 
 section {
-  margin-top: 28px;
+  margin-top: 55px;
   font-size: 100%;
   padding: 20px 50px 50px 50px;
   background: #ffff99;
   border-style: solid;
   border-width: 5px;
-  height: 550px;
+  height: 500px;
+  z-index: 1;
+  position: relative;
 }
 
 section h1 {
@@ -35,6 +37,11 @@ section h1 {
   font-weight: bold;
   color: #3e1f00;
 
+}
+
+section * {
+  z-index: 2;
+  position: relative;
 }
 
 /* Links */
@@ -75,13 +82,17 @@ nav ul {
 nav ul li {
   list-style-type: none;
   display: inline-block;
-  padding: 0 0px 10px 50px;
+  padding: 8px 0px 30px 0px;
 }
 
 nav ul li a {
-  padding: 0 5px;
+  padding: 0px;
   font-weight: bold;
   color: #3e1f00;
+  font-size: 14px;
+  margin-left: 30px;
+  margin-right: 30px;
+  padding-top: 10px;  
 }
 
 nav ul li a:visited {
@@ -97,7 +108,6 @@ nav ul li a:hover {
   -webkit-border-radius: 10px;
   behavior: url(/assets/blueprint/src/border-radius.htc);
   border-radius:         5px 5px 0px 0px;
-  
 }
 
 
@@ -134,11 +144,16 @@ footer {
 }
 
 footer nav {
-  float: none;
+  float: left;
   background-color: #3e1f00;
+  padding-left: 20px;
 }
 
 footer nav ul li a {
+  color: #ffc000;
+}
+
+footer nav ul li a:visited {
   color: #ffc000;
 }
 /* User show page */
@@ -219,10 +234,86 @@ ul.users {
 }
 
 #right {
-  margin-left:  20%;
+  margin-left: 0px;
+  height: 400px;
+  padding: 10px 10px 10px 20px;
+  overflow-y: auto;
 }
 
 #left {
   float: left;
-  width: 30%;
+  width: 150px;
+  height: 400px;
+}
+
+#bottom {
+  	
+}
+
+/* Photo Gallery */
+#poptrox {
+	width: 710px;
+	margin-left: 50px;
+	margin-right: auto;
+	/*background: #000000;*/
+}
+
+#gallery {
+	overflow: hidden;
+	margin: 0px 0px 0px 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+#gallery li {
+	float: left;
+	margin: 0px;
+	padding: 5px 10px;
+}
+
+/*****************************************************
+  Poptrox
+*****************************************************/
+
+.poptrox_popup {
+	position: relative;
+	padding: 1em 1em 3em 1em;
+	background: #ffffff;
+	color: #333333;
+}
+
+.poptrox_popup .loader {
+	display: block;
+	margin: 55px 0 0 0;
+	text-indent: -9999em;
+	background: url('ajax-loader.gif') top center no-repeat;
+}
+
+.poptrox_popup .caption {
+	position: absolute;
+	bottom: 1em;
+	left: 1em;
+}
+
+.poptrox_popup .closer {
+	position: absolute;
+	bottom: 1em;
+	right: 1em;
+}
+
+
+#box1 {
+	margin: 10px 10px 10px 10px;
+	padding: 0px;
+	background: #000000;
+	color: #000000;
+}
+
+#gallery img {
+
+}
+
+#gallery a:hover img {
+	opacity: 1;
+	filter: alpha(opacity=100);
 }

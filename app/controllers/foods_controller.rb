@@ -5,6 +5,7 @@ class FoodsController < ApplicationController
   # GET /foods.json
   def index
     @border_color = "#ff9900"
+    @menu_ht = ht
     @foodTypes = FoodType.all
       
     type = params[:type]

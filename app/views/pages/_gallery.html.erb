@@ -1,0 +1,19 @@
+<div id="poptrox">
+	<ul id="gallery">
+		<% @pictures.each do |picture| %>
+		    <li>
+		    	<%= link_to (image_tag picture.url, :width => "150", :title => picture.name), picture.url %>
+			    <% if current_user %>
+			    	</br>
+				    <%= link_to 'Show', picture %>
+				    <%= link_to 'Edit', edit_picture_path(picture) %>
+				    <%= link_to 'Destroy', picture, confirm: 'Are you sure?', method: :delete %>
+				<% end %>
+			</li>
+		<% end %>
+	</ul>
+</div>
+
+<script type="text/javascript">
+	$('#gallery').poptrox();
+</script>

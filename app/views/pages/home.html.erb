@@ -1,17 +1,3 @@
+<%= render 'page' %>
 
-<div id="left">
-	
-</div>
-
-
-<div id="right">
-	<%= @page1.content.html_safe %>
-	<% if current_user %>
-	<%= link_to 'Edit', edit_page_path(@page1) %>
-	<% end %>
-	</br>
-
-</div>
-
-
-
+<%= render 'gallery' %>
