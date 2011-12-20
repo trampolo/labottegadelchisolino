@@ -1,6 +1,11 @@
+* {
+	
+}
+
 .container {
   width: 710px;
 }
+
 
 body {
   background: #3e1f00;
@@ -27,7 +32,7 @@ section {
   background: #ffff99;
   border-style: solid;
   border-width: 5px;
-  height: 500px;
+  height: 400px;
   z-index: 1;
   position: relative;
 }
@@ -181,7 +186,7 @@ td.sidebar {
 }
 
 div.field, div.actions {
-  margin-bottom: 10px;
+  margin-bottom: 2px;
 }
 
 .field_with_errors {
@@ -235,15 +240,17 @@ ul.users {
 
 #right {
   margin-left: 0px;
-  height: 400px;
+  height: 300px;
   padding: 10px 10px 10px 20px;
   overflow-y: auto;
+  float: right;
+  width: 400px;
 }
 
 #left {
   float: left;
   width: 150px;
-  height: 400px;
+  height: 300px;
 }
 
 #bottom {
@@ -252,9 +259,12 @@ ul.users {
 
 /* Photo Gallery */
 #poptrox {
-	width: 710px;
-	margin-left: 50px;
-	margin-right: auto;
+	width: 580px;
+	margin-left: 35px;
+	margin-right: 20px;
+	margin-bottom: 10px;
+	position: absolute;
+	bottom: 0;
 	/*background: #000000;*/
 }
 
@@ -316,4 +326,13 @@ ul.users {
 #gallery a:hover img {
 	opacity: 1;
 	filter: alpha(opacity=100);
+}
+
+
+.small {
+	height: 50px;
+}
+
+#left {
+	top: 50px;
 }

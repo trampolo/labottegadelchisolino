@@ -3,10 +3,11 @@ Labottegadelchisolino::Application.routes.draw do
   resources :pictures
 
   scope "/admin" do
-    resources :pages, :only => [:edit, :update]
     resources :users, :only => [:new, :create, :edit, :update]
+    resources :pages, :only => [:edit, :update]
   end
 
+  
   resources :foods
   resources :user_sessions, :only => [:new, :create, :destroy]
 
@@ -19,6 +20,7 @@ Labottegadelchisolino::Application.routes.draw do
   match '/links',   :to => 'pages#links'
   match '/offerte', :to => 'pages#offerte'
   match '/eventi',  :to => 'pages#eventi'
+  match '/servizi', :to => 'pages#servizi'
   match '/login',   :to => 'user_sessions#new'
   match '/logout',  :to => 'user_sessions#destroy'
   match ':controller/:action/:id'

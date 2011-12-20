@@ -1,47 +1,39 @@
-<h1>Menu</h1></br>
+<center>
 <% @foodTypes.each do |type| %>
 	<%= link_to type.name, foods_path(:type => type.id), :class => food_type_selected_class(@type_id, type.id) %>&nbsp;&nbsp; 
 <% end %><br/>
-</br>
-<div class="float">
-	<div class="left">
+</center>
 
-		<% @foods.each do |food| %>
-		<div class="line2">
-			<%= image_tag "spacer.gif" %>
-		</div>
-			<table>
-				<tr>
-					<td>
-						<table width="250px">
-							<tr><td><b><%= food.name %> </b><%= link_to arrow_img, food_path(food.id) %>
-								<% if !food.price.nil? %>
-									<span class="price"><%= food.price %>€</span>
-								<% end %>
-							</td></tr>
-					    	<tr><td><%= food.content %></td></tr>
-					    	<tr><td><i><%= food.description %></i></td></tr>	
-					    </table>
-				    </td>
-				</tr>
-				<tr>
-			    	<td>
-			    		<% if current_user %>
-						    <%= link_to "Show", food %>
-						    <%= link_to "Edit", edit_food_path(food) %>
-						    <%= link_to "Destroy", food, confirm: 'Are you sure?', method: :delete %>
-					    <% end %>
-			    	</td>
-				</tr>
-			</table>
-			
-		    
-		<% end %>
-<%= will_paginate @foods %>
-<br/>
-<br/>
-	<% if current_user %>
-	<%= link_to 'New', new_food_path %>
+<div id="left">
+	<% if !@front_food.nil? %>
+		<%= image_tag @front_food.photo.url(:thumb) %>
 	<% end %>
-	</div>
 </div>
+
+
+<div id="right">
+	<%= @page.content.html_safe %>
+	<% if current_user %>
+	<%= link_to 'Edit', edit_page_path(@page) %>
+	<% end %>
+	</br>
+	
+	<% @foods.each do |food| %>
+		<b><%= link_to food.name, foods_path(:type => @type_id, :fg => food.id) %> </b>
+		<% if !food.price.nil? %>
+			<span class="price"><%= food.price %>€</span>
+		<% end %>
+		<% if current_user %>
+		    <%= link_to "Edit", edit_food_path(food) %>
+		    <%= link_to "Destroy", food, confirm: 'Are you sure?', method: :delete %>
+	    <% end %>
+		</br>
+    	<%= food.content %></br>
+	    
+	<% end %>
+	<% if current_user %>
+		<%= link_to 'New', new_food_path %>
+	<% end %>
+</div>
+
+<%= render 'gallery' %>

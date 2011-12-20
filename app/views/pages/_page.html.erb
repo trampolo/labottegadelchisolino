@@ -1,5 +1,7 @@
 <div id="left">
-	
+	<% if !@page.photo_file.nil? %>
+		<%= image_tag @page.photo.url %>
+	<% end %>
 </div>
 
 

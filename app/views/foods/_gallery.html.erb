@@ -1,0 +1,14 @@
+<div id="poptrox">
+	<ul id="gallery">
+		<% @foods.take(4).each do |food| %>
+			<% if food.photo_file_size? %>
+			    <li><%= image_tag food.photo.url(:thumb) %></li>
+			<% end %>
+		<% end %>
+	</ul>
+</div>
+
+
+<script type="text/javascript">
+	$('#gallery').poptrox();
+</script>

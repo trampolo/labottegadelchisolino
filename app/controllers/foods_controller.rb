@@ -1,22 +1,26 @@
 class FoodsController < ApplicationController
   before_filter :require_user, :only => [:new, :edit, :destroy, :create, :update]
+  before_filter :menu
   
   # GET /foods
   # GET /foods.json
   def index
-    @border_color = "#ff9900"
-    @menu_ht = ht
-    @foodTypes = FoodType.all
-      
     type = params[:type]
+    fg  = params[:fg]
+    @page = Page.find(2)
+    @foodTypes = FoodType.all
+    @type_id = type
 
-    if type.nil?
-      type = "1";      
-    end
+    @foods = Food.find_by_sql(["SELECT * FROM FOODS WHERE food_type_id = ?", type])
+
     
-    @type_id = type; 
-    @foods = Food.paginate(:page => params[:page], :per_page => 5,
-                           :conditions => ["food_type_id = ?", type])
+    @foods = Food.find_by_sql("SELECT * FROM FOODS WHERE important = 't'") if !params.has_key?(:type)
+    
+    
+    if !fg.nil?
+      @front_food = Food.find(fg) 
+    end if
+    
     
     respond_to do |format|
       format.html # index.html.erb
@@ -27,6 +31,7 @@ class FoodsController < ApplicationController
   # GET /foods/1
   # GET /foods/1.json
   def show
+
     @food = Food.find(params[:id])
 
     respond_to do |format|
@@ -99,5 +104,11 @@ class FoodsController < ApplicationController
     food = Food.find(params[:id])
     style = params[:style] ? params[:style] : 'original'
     send_data food.photo.file_contents(style), :type => food.photo_content_type    
+  end
+  
+  def menu
+    @border_color = "#ff9900"
+    @menu_ht = ht
+    @title = "Menu"
   end
 end

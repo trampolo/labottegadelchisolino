@@ -24,7 +24,7 @@ class PagesController < ApplicationController
     @border_color = "#ffc000"
     @home_ht = ht
     @page = Page.find(1)
-    @pictures = Picture.find_by_sql("SELECT * FROM PICTURES ORDER BY RANDOM() LIMIT 3 ")  
+    
   end
 
   def premi
@@ -65,4 +65,18 @@ class PagesController < ApplicationController
     @eventi_ht = ht
     @page = Page.find(8)
   end
+  
+  def servizi
+    @title = "Servizi"
+    @border_color = "#663399"
+    @servizi_ht = ht
+    @page = Page.find(9)
+  end
+
+  def photos
+    page = Page.find(params[:id])
+    style = params[:style] ? params[:style] : 'original'
+    send_data page.photo.file_contents(style), :type => page.photo_content_type    
+  end
+  
 end
