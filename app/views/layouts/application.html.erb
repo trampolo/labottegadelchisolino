@@ -10,12 +10,13 @@
     <div class="container">
 		<%= render 'layouts/header' %>
   		<section class="round" style="border-color: <%= "#ffcc00" %>">
-  		    <% flash.each do |key, value| %>
-          		<div class="flash <%= key %>"><%= value %></div>
-        	<% end %>
+
 			<%= yield %>
   		</section>
   		<%= render 'layouts/footer' %>
+  		<% flash.each do |key, value| %>
+      		<div class="flash <%= key %>"><%= value %></div>
+    	<% end %>
   		<%= debug(params) if Rails.env.development? %>
     </div>
   </body>

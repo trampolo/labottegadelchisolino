@@ -32,7 +32,7 @@ section {
   background: #ffff99;
   border-style: solid;
   border-width: 5px;
-  height: 400px;
+  min-height: 400px;
   z-index: 1;
   position: relative;
 }
@@ -245,12 +245,14 @@ ul.users {
   overflow-y: auto;
   float: right;
   width: 400px;
+  max-height: 300px;
 }
 
 #left {
   float: left;
   width: 150px;
   height: 300px;
+  max-height: 300px;
 }
 
 #bottom {
